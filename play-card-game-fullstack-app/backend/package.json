@@ -1,0 +1,31 @@
+{
+  "name": "inteliment-backend",
+  "version": "1.0.0",
+  "repository": "",
+  "description": "inteliment-backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev sudo nodemon start index.js",
+    "preprod": "NODE_ENV=preprod nodemon start index.js",
+    "prod": "NODE_ENV=prod nodemon start index.js",
+    "restart": "nodemon restart index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-validation": "^1.0.2",
+    "express-winston": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "joi": "^13.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.4.13",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

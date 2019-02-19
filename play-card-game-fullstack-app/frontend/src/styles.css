@@ -1,0 +1,37 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+mat-error {
+  color: red !important;
+}
+
+li.list-group-item {
+  padding: 2px 20px;
+}
+
+.panel-heading {
+  padding: 2px 20px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7
+}
+
+.droppable-div {
+  padding: 5px;
+  border: 2px dashed rgba(176, 190, 202, .45);
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #94a1ad;
+  background: rgba(201, 213, 224, .05);
+  transition: .2s;
+  margin: 5px;
+}
+
+.droppable-div:hover {
+  border-color: rgba(158, 163, 168, 0.85);
+  background: rgba(201, 213, 224, .1);
+}

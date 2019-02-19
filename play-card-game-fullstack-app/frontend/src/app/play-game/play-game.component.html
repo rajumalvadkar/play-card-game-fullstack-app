@@ -1,0 +1,83 @@
+<app-nav></app-nav>
+
+<div class="container" style="margin-top: 30px;">
+  <div class="panel panel-default">
+    <!-- <div class="panel-heading">
+    </div> -->
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4" *ngIf="!arrCards.length">
+          <button type="button" class="btn btn-success" (click)="reset(true);">Restart</button>
+        </div>
+        <div class="col-md-1 list-group-item" *ngFor="let item of arrCards; let i = index" dnd-draggable (dragstart)="onDragStart(item);"
+          (dragend)="onDragEnd();" [dragEnabled]="true" [dragData]="{index:i,data:item}">
+          <img src="../../assets/{{item.type}}.png" height="20" width="20">
+          {{item.card}}
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:  30px;">
+      <div class="panel panel-success">
+        <div class="row">
+
+          <div class="col-md-3">
+            <div class="panel-heading droppable-div" dnd-droppable [allowDrop]="allowDrop('spade')" (onDropSuccess)="onDropSuccess($event)">
+              <img src="../../assets/spade.png" height="20" width="20"> Drop Spade Card
+            </div>
+            <div class="panel-body-received">
+              <div class="row">
+                <div class="col-md-4 list-group-item" *ngFor="let item of arrSpadeReceived; let i = index" [ngClass]="{'col-md-12': i==12}">
+                  <img src="../../assets/{{item.type}}.png" height="20" width="20">
+                  {{item.card}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel-heading droppable-div" dnd-droppable [allowDrop]="allowDrop('diamond')" (onDropSuccess)="onDropSuccess($event)">
+              <img src="../../assets/diamond.png" height="20" width="20"> Drop Diamond Card
+            </div>
+            <div class="panel-body-received">
+              <div class="row">
+                <div class="col-md-4 list-group-item" *ngFor="let item of arrDiamondReceived; let i = index" [ngClass]="{'col-md-12': i==12}">
+                  <img src="../../assets/{{item.type}}.png" height="20" width="20">
+                  {{item.card}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel-heading droppable-div" dnd-droppable [allowDrop]="allowDrop('clubs')" (onDropSuccess)="onDropSuccess($event)">
+              <img src="../../assets/clubs.png" height="20" width="20"> Drop Clubs Card
+            </div>
+            <div class="panel-body-received">
+              <div class="row">
+                <div class="col-md-4 list-group-item" *ngFor="let item of arrClubsReceived; let i = index" [ngClass]="{'col-md-12': i==12}">
+                  <img src="../../assets/{{item.type}}.png" height="20" width="20">
+                  {{item.card}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel-heading droppable-div" dnd-droppable [allowDrop]="allowDrop('hearts')" (onDropSuccess)="onDropSuccess($event)">
+              <img src="../../assets/hearts.png" height="20" width="20"> Drop Hearts Card
+            </div>
+            <div class="panel-body-received">
+              <div class="row">
+                <div class="col-md-4 list-group-item" *ngFor="let item of arrHeartsReceived; let i = index" [ngClass]="{'col-md-12': i==12}">
+                  <img src="../../assets/{{item.type}}.png" height="20" width="20">
+                  {{item.card}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

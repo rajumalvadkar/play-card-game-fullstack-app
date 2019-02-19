@@ -1,0 +1,67 @@
+<div class="card mt-5" style="margin:auto;width: 600px;">
+  <form [formGroup]="signupForm">
+
+    <div class="card-body">
+      <h5 class="card-title">Signup</h5>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Name">
+            <mat-error>
+              <span *ngIf="signupForm.get('name').hasError('required') &&
+                                   (signupForm.get('name').dirty || signupForm.get('name').touched)">
+                Name is required
+              </span>
+            </mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Login (is text here)</label>
+            <input type="text" formControlName="login" class="form-control" placeholder="Login">
+            <mat-error>
+              <span *ngIf="signupForm.get('login').hasError('required') &&
+                           (signupForm.get('login').dirty || signupForm.get('login').touched)">
+                Login is required
+              </span>
+            </mat-error>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Password">
+            <mat-error>
+              <span *ngIf="signupForm.get('password').hasError('required') &&
+                               (signupForm.get('password').dirty || signupForm.get('password').touched)">
+                Password is required
+              </span>
+            </mat-error>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="name">Skills (optional)</label>
+            <tag-input [(ngModel)]='skills' [ngModelOptions]="{standalone: true}" placeholder="Press enter to add skill"
+              secondaryPlaceholder="Press enter to add skill"></tag-input>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link" (click)="goToLogin()">Login</button>
+  </form>
+
+</div>
